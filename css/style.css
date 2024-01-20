@@ -50,51 +50,80 @@ nav {
     margin-right: 20px;
 
 }
+.navbar {
+    background-color: white; /* Background color for the navbar */
+}
+
+.navbar .nav-link {
+    color: black; /* Text color for nav links */
+}
+
 
 /* ======================
 ----- FIRST SECTION------
 =======================*/
 
 .first-section {
+    position: relative;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/first-section-bg.jpg);
     background-size: cover;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
 }
 
-
 .first-section .text-content {
-	text-align: center;
-	color: #fff;
-	transform: translateY(-250%)
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    color: #fff;
 }
 
 .first-section .text-content h2 {
-	font-size: 60px;
-	text-transform: uppercase;
-	font-weight: 900;
-	letter-spacing: 1px;
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
 .first-section .text-content .line-dec {
-	width: 60px;
-	height: 3px;
-	background-color: #fff;
-	margin: 25px 0px 25px auto;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin: 25px 0px 25px auto;
 }
 
 .first-section .text-content span {
-	font-size: 18px;
-	text-transform: uppercase;
-	font-weight: 300;
-	letter-spacing: 1px;
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 1px;
 }
+
+.first-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 767px) {
+    .first-section {
+        background-attachment: scroll;
+    }
+}
+
 
 
 /* ======================
@@ -239,7 +268,7 @@ nav {
     vertical-align: middle;
 }
 .table-custom .plus {
-	font-size: xx-large;
+	font-size: x-large;
     text-align: center;
     color: black;
     font-weight: bold;
@@ -249,7 +278,7 @@ nav {
 }
 .table-custom tbody tr {
     background-color: #fff;
-	font-size: large;
+	font-size: medium;
 }
 .table-custom td:nth-child(2), .table-custom td:nth-child(3) {
     font-weight: bold;
