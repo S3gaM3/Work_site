@@ -111,14 +111,14 @@ p {
     color: #666;
     margin-bottom: 15px;
 }
-.second-section .service-item ul li {
+.second-section .service-item li {
     margin-bottom: 10%;
 }
 .second-section li {
     list-style-type: disc;
     padding-left: 0;
 }
-.second-section ul li {
+.second-section ol li {
     text-align: left;
 }
 
@@ -159,13 +159,13 @@ p {
 	letter-spacing: 1px;
 }
 
-.third-section ul li {
+.third-section ol li {
     font-size: 18px;
     color: white;
 	margin-top: 15px;
 	list-style-type: disc;
 }
-.third-section ul li:first-child {
+.third-section ol li:first-child {
     font-weight: bold;
 }
 
@@ -182,7 +182,7 @@ p {
     padding: 16% 0px;
 }
 
-.fourth-section ul li {
+.fourth-section ol li {
     font-size: 18px;
     color: black;
     margin-top: 15px;
@@ -245,10 +245,8 @@ p {
 =======================*/
 
 .sixth-section {
-	background-image: url(../img/sixth-section-bg.png);
-	background-size: cover;
+	background-color: white;
 	width: 100%;
-	background-repeat: no-repeat;
 	padding: 10% 0px;
 }
 
