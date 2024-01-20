@@ -38,7 +38,18 @@ p {
 	font-weight: 700;
 	letter-spacing: 1px;
 }
+.logo-container {
+	width: 130px;
+	height: 54px;
+	transform: translateX(-200%)
+}
+nav {
+	background-color: #fff;
+}
+.navbar-nav .nav-item {
+    margin-right: 20px;
 
+}
 
 /* ======================
 ----- FIRST SECTION------
@@ -51,13 +62,17 @@ p {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    padding: 20% 0px 20% 0px;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 
 .first-section .text-content {
 	text-align: center;
 	color: #fff;
+	transform: translateY(-250%)
 }
 
 .first-section .text-content h2 {
