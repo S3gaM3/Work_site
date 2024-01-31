@@ -89,7 +89,7 @@ nav {
 }
 
 .first-section .text-content h2 {
-    font-size: 60px;
+    font-size: 50px;
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 1px;
@@ -121,6 +121,45 @@ nav {
 @media (max-width: 767px) {
     .first-section {
         background-attachment: scroll;
+    }
+}
+/* Стили для экранов больше 1200px */
+@media (min-width: 1200px) {
+    .first-section .text-content h2 {
+        font-size: 60px; /* Увеличиваем размер заголовка */
+    }
+    .first-section .text-content span {
+        font-size: 42px; /* Увеличиваем размер подзаголовка */
+    }
+}
+
+/* Стили для экранов между 992px и 1199px */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .first-section .text-content h2 {
+        font-size: 55px;
+    }
+    .first-section .text-content span {
+        font-size: 38px;
+    }
+}
+
+/* Стили для экранов меньше 768px */
+@media (max-width: 767px) {
+    .first-section .text-content h2 {
+        font-size: 40px; /* Уменьшаем размер заголовка */
+    }
+    .first-section .text-content span {
+        font-size: 30px; /* Уменьшаем размер подзаголовка */
+    }
+}
+
+/* Стили для очень маленьких экранов меньше 480px */
+@media (max-width: 480px) {
+    .first-section .text-content h2 {
+        font-size: 30px;
+    }
+    .first-section .text-content span {
+        font-size: 24px;
     }
 }
 
@@ -604,6 +643,12 @@ footer a:hover {
 }
 
 @media (max-width: 992px){
+	.fivth-section .table-custom {
+        font-size: 0.9em; /* Уменьшаем размер шрифта для лучшего отображения */
+    }
+	.fivth-section .table-custom th, .fivth-section .table-custom td {
+        padding: 8px; /* Уменьшаем отступы */
+    }
 
 	.fourth-section .send-to-portfolio {
 		padding:  45.8% 0px;
@@ -643,6 +688,12 @@ footer a:hover {
 }
 
 @media (max-width: 850px){
+	.fivth-section .table-custom {
+        font-size: 0.8em; /* Еще больше уменьшаем размер шрифта */
+    }
+	.fivth-section .table-custom th, .fivth-section .table-custom td {
+        padding: 6px; /* Дополнительное уменьшение отступов */
+    }
 
 	.send-to-home  {
 		margin-top: 80px;
@@ -729,6 +780,17 @@ footer a:hover {
 
 
 @media (max-width: 590px){
+	.fivth-section .table-responsive {
+        overflow-x: auto; /* Добавляем горизонтальную прокрутку для очень маленьких экранов */
+    }
+	.fivth-section .table-custom {
+        font-size: 0.7em; /* Дополнительное уменьшение размера шрифта */
+    }
+	.fivth-section .table-custom th, .fivth-section .table-custom td {
+        min-width: 100px; /* Устанавливаем минимальную ширину для ячеек */
+        padding: 5px; /* Уменьшаем отступы */
+    }
+
 
 	.third-section {
 		text-align: center;
@@ -801,7 +863,6 @@ body.lb-disable-scrolling {
 
 .lb-outerContainer {
   position: relative;
-  *zoom: 1; 
   width: 250px;
   height: 250px;
   margin: 0 auto;
@@ -896,7 +957,6 @@ body.lb-disable-scrolling {
 .lb-dataContainer {
   margin: 0 auto;
   padding-top: 5px;
-  *zoom: 1;
   width: 100%;
   -moz-border-radius-bottomleft: 4px;
   -webkit-border-bottom-left-radius: 4px;
