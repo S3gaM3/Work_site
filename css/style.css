@@ -57,6 +57,15 @@ nav {
 .navbar .nav-link {
     color: black; /* Text color for nav links */
 }
+@media (max-width: 768px) {
+    h2, h3, h4 {
+        font-size: smaller; /* Уменьшаем размеры заголовков */
+    }
+
+    .container {
+        padding: 0 15px; /* Уменьшаем padding для контейнеров */
+    }
+}
 
 
 /* ======================
@@ -123,15 +132,24 @@ nav {
         background-attachment: scroll;
     }
 }
-/* Стили для экранов больше 1200px */
 @media (min-width: 1200px) {
     .first-section .text-content h2 {
-        font-size: 60px; /* Увеличиваем размер заголовка */
+        font-size: 60px;
     }
     .first-section .text-content span {
-        font-size: 42px; /* Увеличиваем размер подзаголовка */
+        font-size: 42px;
     }
 }
+
+@media (max-width: 768px) {
+    .first-section .text-content h2 {
+        font-size: 40px;
+    }
+    .first-section .text-content span {
+        font-size: 30px;
+    }
+}
+
 
 /* Стили для экранов между 992px и 1199px */
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -140,16 +158,6 @@ nav {
     }
     .first-section .text-content span {
         font-size: 38px;
-    }
-}
-
-/* Стили для экранов меньше 768px */
-@media (max-width: 767px) {
-    .first-section .text-content h2 {
-        font-size: 40px; /* Уменьшаем размер заголовка */
-    }
-    .first-section .text-content span {
-        font-size: 30px; /* Уменьшаем размер подзаголовка */
     }
 }
 
@@ -204,6 +212,12 @@ nav {
 .second-section ol li {
     text-align: left;
 }
+@media (max-width: 992px) {
+    .second-section .col-lg-4 {
+        width: 100%; /* Колонки занимают всю ширину на маленьких экранах */
+    }
+}
+
 
 /* ======================
 ----- THIRD SECTION------
@@ -251,6 +265,14 @@ nav {
 .third-section ol li:first-child {
     font-weight: bold;
 }
+@media (max-width: 768px) {
+    .third-section .left-image,
+    .third-section .right-text {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 
 
 /* ======================
@@ -271,6 +293,12 @@ nav {
     margin-top: 15px;
     list-style-type: disc;
     text-align: left;
+}
+@media (max-width: 768px) {
+    .fourth-section .single-showcase-box,
+    .fourth-section .single-feature-box {
+        width: 100%; /* Элементы занимают всю ширину */
+    }
 }
 
 
@@ -322,6 +350,12 @@ nav {
 .table-custom td:nth-child(2), .table-custom td:nth-child(3) {
     font-weight: bold;
 }
+@media (max-width: 768px) {
+    .fivth-section .table-custom {
+        font-size: 14px; /* Уменьшаем размер шрифта для таблицы */
+    }
+}
+
 
 /* ======================
 ----- SIXTH SECTION------
@@ -414,6 +448,11 @@ nav {
 	border-radius: 50%;
 	border: 1px solid #415b90;
 	font-size: 18px;
+}
+@media (max-width: 768px) {
+    .sixth-section .col-md-6, .sixth-section .col-md-5 {
+        width: 100%; /* Элементы занимают всю ширину */
+    }
 }
 
 /* ======================
