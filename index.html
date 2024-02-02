@@ -1,19 +1,82 @@
 <!DOCTYPE html>
-<html class="no-js" lang="">
+<html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Linpass</title>
-    <meta name="description" content="Описание вашего веб-сайта">
+    <meta name="keywords" content="диспетчеризация без платежей, пропуск пожарной, пропуск 112, управление шлагбаумом" />
+    <meta name="description" content="диспетчеризация шлагбаума, диспетчеризация без абонентской платы, требования 1479, СКУД для двора, СКУД для шлагбаума" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/fontAwesome.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+
+		function send_email_part()
+		{
+	 
+			$.ajax({
+	            type:'POST',
+	            data:{
+				   name:submit_name.value, email:submit_email.value, subject:submit_subject.value, message:submit_message.value
+				  },
+	            datatype: 'html',
+	            cache:false,
+	            url: 'sendmail.php',
+                success: function(html)
+				{
+					if (html.length>0)
+					{
+						form_submit_info.innerHTML=html;	
+						submit_name.value="";
+						submit_email.value="";
+						submit_subject.value="";
+						submit_message.value="";
+					}
+					else					
+					{
+						form_submit_info.innerHTML="Заполните пожалуйста все поля формы";
+					}
+				}
+              });
+		}
+		//----------------------------------------------------------------------------------
+		function send_email_part2()
+		{
+			$.ajax({
+	            type:'POST',
+	            data:{
+				   name:submit_name2.value, email:submit_email2.value
+				  },
+	            datatype: 'html',
+	            cache:false,
+	            url: 'sendmail.php',
+                success: function(html)
+				{
+					if (html.length>0)
+					{
+						submit_name2.value="";
+						submit_email2.value="";
+						form_answer_by_input.innerHTML="Спасибо. Сообщение отправлено, мы с Вами свяжемся.";
+						
+						setTimeout(function() {form_answer_by_input.innerHTML=""}, 10000);
+						
+					}
+					else					
+					{
+						alert("Заполните пожалуйста все поля формы");
+					}
+					
+				}
+              });
+		}
+		</script>
 </head>
 
 <body>
@@ -29,6 +92,17 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
+                        <li>
+                            <div class="container text-center">
+                                <div class="d-inline-block position-relative">
+                                    <i class="fa fa-phone"></i>
+                                    <a href="tel:+74951281894" class="btn" id="phone-number">
+                                        <span>+7(495) 12</span><span class="phone-hide">8-18-94</span>
+                                    </a>
+                                </div>
+                            </div>
+                                                                                    
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#home">Главная</a>
                         </li>
@@ -62,6 +136,32 @@
         </div>
     </section>
   
+    <section  class="seventh-section" id="contacts">
+        <div class="container textbiger">
+            <div class="row justify-content-center">
+                <div class="col-md-6 pt-5">
+                    <h3 class="text-warning fs-1">Рассчитать стоимость установки Linpass.</h3>
+                    <h3 class="text-warning fs-2">Получите скидку 50% на монтаж системы до 15 мая!</h3>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" id="submit_name2" class="form-control mb-3" style="font-size: 100%;font-weight: bolder; height: 70px; text-align: center;" name="your_name" maxlength="100" placeholder="Ваше имя" value="">
+                        </div>
+                        <div class="col">
+                            <input type="text" id="submit_email2" class="form-control mb-3" style="font-size: 100%;font-weight: bolder; height: 70px; text-align: center;" maxlength="50" name="your_phone" placeholder="Телефон" value="">
+                        </div>
+                    </div>
+                    <div class="text-warning fs-2" id="form_answer_by_input"></div>
+                    <div class="text-center">
+                        <br>
+                        <input class="btn-primary text-white" type="button" style="border-radius: 40px;" name="send_order" onclick="send_email_part2()"   value="Рассчитать цену">
+                    </div>
+                    <h4 class="text-black fs-3 pt-4">*Нажимая кнопку, Вы даете согласие на обработку персональных данных</h4>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
         <section class="second-section">
           <div class="container">
@@ -240,53 +340,288 @@
           </div>
         </section>
 
-        <section class="sixth-section" id="contact">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
+        <section class="first-gallery-section">
+            <div class="container">
                 <div class="row">
-                  <form id="contact" action="" method="post">
-                    <div class="col-md-6">
-                      <fieldset>
-                        <input name="name" type="text" class="form-control" id="name" placeholder="Ваше имя..." required="">
-                      </fieldset>
+                    <div class="col-md-3 col-6">
+                        <img src="img/image1.jpg" alt="Image 1" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal1">
+                        <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modal1Label">Изображение 1</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="img/image1.jpg" alt="Image 1" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                      <fieldset>
-                        <input name="email" type="email" class="form-control" id="email" placeholder="Ваша почта..." required="">
-                      </fieldset>
+                    <div class="col-md-3 col-6 mb-4">
+                        <img src="img/image2.jpg" alt="Image 2" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal2">
+                        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modal2Label">Изображение 2</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="img/image2.jpg" alt="Image 2" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Ваше сообщение..." required=""></textarea>
-                      </fieldset>
+                    <div class="col-md-3 col-6 mb-4">
+                        <img src="img/image3.jpg" alt="Image 3" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal3">
+                        <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modal3Label">Изображение 3</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="img/image3.jpg" alt="Image 3" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        <button type="submit" id="form-submit" class="btn">Отправить</button>
-                      </fieldset>
+                    <div class="col-md-3 col-6 mb-4">
+                        <img src="img/image4.jpg" alt="Image 4" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal4">
+                        <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="modal4Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modal4Label">Изображение 4</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="img/image4.jpg" alt="Image 4" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </form>
                 </div>
-              </div>
-              <div class="col-md-5">
-                <div class="right-info" >
-                  <ul>
-                    <li><a href="#"><i class="fa fa-envelope"></i>info@linpass.ru</a></li>
-                    <li><a href="#"><i class="fa fa-phone"></i>+7(495) 128-18-94</a></li>
-                    <li><a href="#"><i class="fa fa-map-marker"></i>linpass.ru</a></li>
-                  </ul>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image5.jpg" alt="Image 5" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal5">
+                    <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="modal5Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal5Label">Изображение 5</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image5.jpg" alt="Image 5" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image6.jpg" alt="Image 6" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal6">
+                    <div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="modal6Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal6Label">Изображение 6</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image6.jpg" alt="Image 6" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image7.jpg" alt="Image 7" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal7">
+                    <div class="modal fade" id="modal7" tabindex="-1" aria-labelledby="modal7Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal7Label">Изображение 7</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image7.jpg" alt="Image 7" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image8.jpg" alt="Image 8" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal8">
+                    <div class="modal fade" id="modal8" tabindex="-1" aria-labelledby="modal8Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal8Label">Изображение 8</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image8.jpg" alt="Image 8" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image9.jpg" alt="Image 9" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal9">
+                    <div class="modal fade" id="modal9" tabindex="-1" aria-labelledby="modal9Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal9Label">Изображение 9</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image9.jpg" alt="Image 9" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image10.jpg" alt="Image 10" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal10">
+                    <div class="modal fade" id="modal10" tabindex="-1" aria-labelledby="modal10Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal10Label">Изображение 10</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image10.jpg" alt="Image 10" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image11.jpg" alt="Image 11" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal11">
+                    <div class="modal fade" id="modal11" tabindex="-1" aria-labelledby="modal11Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal11Label">Изображение 11</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image11.jpg" alt="Image 11" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image12.jpg" alt="Image 12" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal12">
+                    <div class="modal fade" id="modal12" tabindex="-1" aria-labelledby="modal12Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal12Label">Изображение 12</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image12.jpg" alt="Image 12" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image13.jpg" alt="Image 13" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal13">
+                    <div class="modal fade" id="modal13" tabindex="-1" aria-labelledby="modal13Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal13Label">Изображение 13</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image13.jpg" alt="Image 13" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image14.jpg" alt="Image 14" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal14">
+                    <div class="modal fade" id="modal14" tabindex="-1" aria-labelledby="modal14Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal14Label">Изображение 14</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image14.jpg" alt="Image 14" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image15.jpg" alt="Image 15" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal15">
+                    <div class="modal fade" id="modal15" tabindex="-1" aria-labelledby="modal15Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal15Label">Изображение 15</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image15.jpg" alt="Image 15" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
-          </div>
-        </section>
+        </div>
+    </div>
+</section>
 
+
+        <section class="sixth-section py-5" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 pt-5">
+                        <h3 class="text-black fs-5">Рассчитать стоимость установки Linpass.</h3>
+                        <h3 class="text-black fs-4">Получите скидку 50% на монтаж системы до 15 мая!</h3>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" id="submit_name2" class="form-control mb-3" style="font-size: 100%;font-weight: bolder; height: 70px; text-align: center;" name="your_name" maxlength="100" placeholder="Ваше имя" value="">
+                            </div>
+                            <div class="col">
+                                <input type="text" id="submit_email2" class="form-control mb-3" style="font-size: 100%;font-weight: bolder; height: 70px; text-align: center;" maxlength="50" name="your_phone" placeholder="Телефон" value="">
+                            </div>
+                        </div>
+                        <div class="text-warning fs-4" id="form_answer_by_input"></div>
+                        <div class="text-center">
+                            <br>
+                            <input class="btn-primary text-white" type="button" style="border-radius: 40px;" name="send_order" onclick="send_email_part2()"   value="Рассчитать цену">
+                        </div>
+                        <h4 class="text-black fs-3 pt-4">*Нажимая кнопку, Вы даете согласие на обработку персональных данных</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <footer>
           <div class="container">
               <div class="row">
                   <div class="col-md-12">
-                      <p>Copyright &copy; 2019 - 2024 Россия, Москва. LinPass</p>
+                    <p>© 2019 - <script>document.write(new Date().getFullYear());</script>2024 Россия, Москва. LinPass</p>
                   </div>
               </div>
           </div>
