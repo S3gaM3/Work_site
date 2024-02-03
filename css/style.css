@@ -294,18 +294,19 @@ nav {
     font-size: 24px;
     color: #333;
     margin-bottom: 10px;
+    text-align: center;
 }
 
-.second-section h4 {
+.second-section p {
     font-size: 18px;
-    color: #666;
+    color: black;
     margin-bottom: 15px;
 }
 .second-section .service-item li {
     margin-bottom: 10%;
 }
 .second-section li {
-    list-style-type: disc;
+    list-style-type:'✔ ';
     padding-left: 0;
 }
 .second-section ol li {
@@ -359,7 +360,7 @@ nav {
     font-size: 18px;
     color: white;
 	margin-top: 15px;
-	list-style-type: disc;
+	list-style-type:'✔ ';
 }
 .third-section ol li:first-child {
     font-weight: bold;
@@ -390,7 +391,7 @@ nav {
     font-size: 18px;
     color: black;
     margin-top: 15px;
-    list-style-type: disc;
+    list-style-type:'✔ ';
     text-align: left;
 }
 @media (max-width: 768px) {
@@ -597,7 +598,7 @@ footer ul li a:hover {
 
 footer p {
 	margin-top: 20px;
-	font-size: 13px;
+	font-size: 18px;
 	font-weight: 300;
 	letter-spacing: 0.2px;
 	color: #fff;
