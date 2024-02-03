@@ -424,6 +424,8 @@ nav {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
+    background-color: #fff;
+	font-size: medium;
 }
 .table-custom th, .table-custom td {
     padding: 10px;
@@ -450,16 +452,13 @@ nav {
 .table-custom td:first-child {
     font-weight: bold;
 }
-.table-custom tbody tr {
-    background-color: #fff;
-	font-size: medium;
-}
 .table-custom td:nth-child(2), .table-custom td:nth-child(3) {
     font-weight: bold;
 }
 @media (max-width: 768px) {
     .fivth-section .table-custom {
-        font-size: 14px; /* Уменьшаем размер шрифта для таблицы */
+        font-size: 14px;
+        max-width: 760px; /* Уменьшаем размер шрифта для таблицы */
     }
 }
 
