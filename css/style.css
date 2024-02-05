@@ -116,7 +116,11 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background: rgb(47,91,147);
+    background: -moz-linear-gradient(0deg, rgba(47,91,147,1) 10%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(47,91,147,1) 10%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(0deg, rgba(47,91,147,1) 10%, rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2f5b93",endColorstr="#ffffff",GradientType=1);
 }
 
 @media (max-width: 767px) {
@@ -172,9 +176,16 @@ nav {
 #phone-number:hover .phone-hide {
     visibility: visible;
 }
-.seventh-section {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
+.button{
+    background-color: #2f5b93;
 }
+.seventh-section {
+    background-image: url(../img/7-section-bg.png);
+	background-size: cover;
+	width: 100%;
+	background-repeat: no-repeat;
+	padding: 20% 0px;
+    }
 .seventh-section {
 	background-color: white;
 	width: 100%;
@@ -185,7 +196,6 @@ nav {
 }
 .seventh-section input {
 	padding-left: 15px;
-	font-size: 13px;
 	color: #7a7a7a;
 	border: 1px solid #eee;
 	outline: none;
@@ -199,7 +209,6 @@ nav {
 	border-radius: 22px;
 	border: 1px solid #eee;
 	padding: 15px;
-	font-size: 13px;
 	color: #7a7a7a;
 	outline: none;
 	margin-bottom: 25px;
