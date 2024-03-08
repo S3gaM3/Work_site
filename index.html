@@ -1,3 +1,35 @@
+<?php
+	header("Access-Control-Allow-Origin: *");
+    //header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+    
+    //header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Authorization');
+	
+	if (isset($_GET['yandex_counter']) && strlen($_GET['yandex_counter'])>0)
+	{
+		if (ctype_digit($_GET['yandex_counter'])) 
+		{
+			file_put_contents('ya_counter.txt', $_GET['yandex_counter']);
+		}
+	}
+	
+	//------------------------------------
+	$ya_counter=88654502;
+	if (file_exists('ya_counter.txt'))
+	{
+		$ya_counter=file_get_contents('ya_counter.txt');
+	}
+	
+	if (strpos($_SERVER['HTTP_HOST'],"neurotail")!==FALSE)
+	{
+		header('HTTP/1.1 200 OK');
+		header('Location: http://neurotail2.ru/lk');
+		exit();
+	}
+
+	
+	
+	
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -16,6 +48,20 @@
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/fontAwesome.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        
+            ym(<?php echo $ya_counter; ?>, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true
+            });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/<?php echo $ya_counter; ?>" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+     <!-- /Yandex.Metrika counter -->
     <script>
 
 		function send_email_part()
@@ -76,7 +122,8 @@
 				}
               });
 		}
-		</script>
+	
+    </script>
 </head>
 
 <body>
@@ -140,8 +187,8 @@
         <div class="container textbiger">
             <div class="row justify-content-center">
                 <div class="col-md-6 pt-5">
-                    <h3 class="text-warning fs-1">Рассчитать стоимость установки Linpass.</h3>
-                    <h3 class="text-warning fs-2">Получите скидку 50% на монтаж системы до 15 мая!</h3>
+                    <h3 class="text-black fs-1">Рассчитать стоимость установки Linpass.</h3>
+                    <h3 class="text-black fs-2">Получите скидку 50% на монтаж системы до 15 мая!</h3>
                     <br>
                     <div class="row">
                         <div class="col">
@@ -151,12 +198,12 @@
                             <input type="text" id="submit_email2" class="form-control mb-3" style="font-size: 100%;font-weight: bolder; height: 70px; text-align: center;" maxlength="50" name="your_phone" placeholder="Телефон" value="">
                         </div>
                     </div>
-                    <div class="text-warning fs-2" id="form_answer_by_input"></div>
+                    <div class="text-black fs-2" id="form_answer_by_input"></div>
                     <div class="text-center">
                         <br>
-                        <input class="btn-primary text-white" type="button" style="border-radius: 40px;" name="send_order" onclick="send_email_part2()"   value="Рассчитать цену">
+                        <input class="button text-white" type="button" style="border-radius: 40px;" name="send_order" onclick="send_email_part()"   value="Рассчитать цену">
                     </div>
-                    <h4 class="text-black fs-3 pt-4">*Нажимая кнопку, Вы даете согласие на обработку персональных данных</h4>
+                    <h4 class="text-black fs-10 pt-2">*Нажимая кнопку, Вы даете согласие на обработку персональных данных</h4>
                 </div>
             </div>
         </div>
@@ -165,31 +212,33 @@
 
         <section class="second-section">
           <div class="container">
-            <h2 style="text-align: center;font-weight: bold;">Управление шлагбаумом - просто и удобно</h2>
+            <h1 style="text-align: center;font-weight: bold;">Управление шлагбаумом - просто и удобно</h1>
               <div><br><br></div>
               <div class="row flexbox-center">
                   <div class="col-lg-4">
                       <div class="service-item">
-                          <h3><b>Открытие шлагбаума</b></h3>
-                          <div><br><br></div>
                           <ol>
+                            <li style="list-style-type: none;">
+                                <h3><b>Открытие шлагбаума</b></h3>
+                                <div><br><br></div>
+                            </li>
                               <li style="list-style-type: none;">
-                                <h3>Для служб 112 :</h3>
+                                <p><b>Для служб 112 :</b></p>
                               </li>
                               <li>
-                                <h4>автоматически, при помощи НЕЙРОСЕТИ</h4>
+                                <p>Автоматически, при помощи НЕЙРОСЕТИ</p>
                               </li>
                               <li style="list-style-type: none;">
-                                <h3>Для жителей и гостей</h3>
+                                <p><b>Для жителей и гостей</b></p>
                               </li>
                               <li>
-                                  <h4>Звонком с телефона</h4>
+                                  <p>Звонком с телефона</p>
                               </li>
                               <li>
-                                  <h4>Кнопкой в Telegram (опция по выбору)</h4>
+                                  <p>Кнопкой в Telegram (опция по выбору)</p>
                               </li>
                               <li>
-                                <h4>Автономная работа оборудования при отсутствии интернет-соединения</h4>
+                                <p>Автономная работа оборудования при отсутствии интернет-соединения</p>
                             </li>
                           </ol>
                       </div>
@@ -201,20 +250,21 @@
                   </div>
                   <div class="col-lg-4">
                       <div class="service-item">
-                          <h3><b>Интерфейс пользователя и администратора(через сайт / в Telegram)</b></h3>
-                          <div><br><br></div>
                           <ol>
+                            <li style="list-style-type: none;">
+                                <h3><b>Интерфейс пользователя и администратора(через сайт / в Telegram)</b></h3>    
+                            </li>
                               <li>
-                                  <h4>Управление уровнями прав жителей</h4>
+                                  <p>Управление уровнями прав жителей</p>
                               </li>
                               <li>
-                                  <h4>Выписка гостевых пропусков</h4>
+                                  <p>Выписка гостевых пропусков</p>
                               </li>
                               <li>
-                                  <h4>Облачное хранение статистики проездов с фотофиксацией</h4>
+                                  <p>Облачное хранение статистики проездов с фотофиксацией</p>
                               </li>
                               <li>
-                                <h4>Удаленная диагностика неисправностей</h4>
+                                <p>Удаленная диагностика неисправностей</p>
                             </li>
                           </ol>
                       </div>
@@ -292,7 +342,7 @@
             <div class="col-md-12 col-xs-3"> 
               <div class="left-text">
                 <div class="table-responsive">
-                  <table class="table table-custom mx-auto">
+                  <table class="table table-custom">
                             <thead>
                                 <tr class="header">
                                     <th scope="col"> </th>
@@ -407,7 +457,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
                 <div class="col-md-3 col-6 mb-4">
                     <img src="img/image5.jpg" alt="Image 5" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal5">
                     <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="modal5Label" aria-hidden="true">
@@ -584,7 +633,7 @@
                         </div>
                     </div>
                 </div>
-                
+                </div>
             </div>
         </div>
     </div>
@@ -595,8 +644,8 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6 pt-5">
-                        <h3 class="text-black fs-5">Рассчитать стоимость установки Linpass.</h3>
-                        <h3 class="text-black fs-4">Получите скидку 50% на монтаж системы до 15 мая!</h3>
+                        <h3 class="text-black fs-1">Рассчитать стоимость установки Linpass.</h3>
+                        <h3 class="text-black fs-2">Получите скидку 50% на монтаж системы до 15 мая!</h3>
                         <br>
                         <div class="row">
                             <div class="col">
@@ -609,9 +658,9 @@
                         <div class="text-warning fs-4" id="form_answer_by_input"></div>
                         <div class="text-center">
                             <br>
-                            <input class="btn-primary text-white" type="button" style="border-radius: 40px;" name="send_order" onclick="send_email_part2()"   value="Рассчитать цену">
+                            <input class="button text-white" type="button" style="border-radius: 40px;" name="send_order" onclick="send_email_part()"   value="Рассчитать цену">
                         </div>
-                        <h4 class="text-black fs-3 pt-4">*Нажимая кнопку, Вы даете согласие на обработку персональных данных</h4>
+                        <h4 class="text-black fs-5 pt-2">*Нажимая кнопку, Вы даете согласие на обработку персональных данных</h4>
                     </div>
                 </div>
             </div>
@@ -621,7 +670,7 @@
           <div class="container">
               <div class="row">
                   <div class="col-md-12">
-                    <p>© 2019 - <script>document.write(new Date().getFullYear());</script>2024 Россия, Москва. LinPass</p>
+                    <p>© 2019 - <script>document.write(new Date().getFullYear());</script> Россия, Москва. LinPass</p>
                   </div>
               </div>
           </div>
