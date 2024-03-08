@@ -49,21 +49,6 @@
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/fontAwesome.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Yandex.Metrika counter -->
-        <script type="text/javascript" >
-            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-        
-            ym("<?php echo $ya_counter; ?>", "init", {
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true
-            });
-
-        </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/<?php echo $ya_counter; ?>" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-     <!-- /Yandex.Metrika counter -->
     <script>
 
 		function send_email_part()
@@ -124,19 +109,7 @@
 				}
               });
 		}
-
-        document.addEventListener("DOMContentLoaded", function() {
-            var phoneNumber = document.getElementById("phone-number");
-            var phoneHide = document.getElementsByClassName("phone-hide")[0]; // Предполагается, что у вас только один элемент с классом "phone-hide"
-
-            phoneNumber.addEventListener("click", function(event) {
-                event.preventDefault();
-                phoneHide.style.display = (phoneHide.style.display === "none" || phoneHide.style.display === "") ? "block" : "none";
-            });
-
-    });
-
-    </script>
+		</script>
 </head>
 
 <body>
@@ -202,9 +175,8 @@
         <div class="container textbiger">
             <div class="row justify-content-center">
                 <div class="col-md-6 pt-5">
-                    <div><br><br></div>
-                    <h3 class="text-black fs-1">Рассчитать стоимость установки Linpass.</h3>
-                    <h3 class="text-black fs-2">Получите скидку 50% на монтаж системы до 15 мая!</h3>
+                    <h3 class="text-warning fs-1">Рассчитать стоимость установки Linpass.</h3>
+                    <h3 class="text-warning fs-2">Получите скидку 50% на монтаж системы до 15 мая!</h3>
                     <br>
                     <div class="row">
                         <div class="col">
@@ -420,9 +392,251 @@
         </section>
 
         <section class="first-gallery-section">
-    <div class="container">
-        <div class="row" id="gallery-row">
-            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-6">
+                        <img src="img/image1.jpg" alt="Image 1" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal1">
+                        <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modal1Label">Изображение 1</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="img/image1.jpg" alt="Image 1" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <img src="img/image2.jpg" alt="Image 2" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal2">
+                        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modal2Label">Изображение 2</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="img/image2.jpg" alt="Image 2" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <img src="img/image3.jpg" alt="Image 3" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal3">
+                        <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modal3Label">Изображение 3</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="img/image3.jpg" alt="Image 3" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <img src="img/image4.jpg" alt="Image 4" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal4">
+                        <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="modal4Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modal4Label">Изображение 4</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="img/image4.jpg" alt="Image 4" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image5.jpg" alt="Image 5" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal5">
+                    <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="modal5Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal5Label">Изображение 5</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image5.jpg" alt="Image 5" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image6.jpg" alt="Image 6" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal6">
+                    <div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="modal6Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal6Label">Изображение 6</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image6.jpg" alt="Image 6" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image7.jpg" alt="Image 7" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal7">
+                    <div class="modal fade" id="modal7" tabindex="-1" aria-labelledby="modal7Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal7Label">Изображение 7</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image7.jpg" alt="Image 7" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image8.jpg" alt="Image 8" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal8">
+                    <div class="modal fade" id="modal8" tabindex="-1" aria-labelledby="modal8Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal8Label">Изображение 8</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image8.jpg" alt="Image 8" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image9.jpg" alt="Image 9" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal9">
+                    <div class="modal fade" id="modal9" tabindex="-1" aria-labelledby="modal9Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal9Label">Изображение 9</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image9.jpg" alt="Image 9" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image10.jpg" alt="Image 10" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal10">
+                    <div class="modal fade" id="modal10" tabindex="-1" aria-labelledby="modal10Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal10Label">Изображение 10</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image10.jpg" alt="Image 10" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image11.jpg" alt="Image 11" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal11">
+                    <div class="modal fade" id="modal11" tabindex="-1" aria-labelledby="modal11Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal11Label">Изображение 11</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image11.jpg" alt="Image 11" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image12.jpg" alt="Image 12" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal12">
+                    <div class="modal fade" id="modal12" tabindex="-1" aria-labelledby="modal12Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal12Label">Изображение 12</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image12.jpg" alt="Image 12" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image13.jpg" alt="Image 13" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal13">
+                    <div class="modal fade" id="modal13" tabindex="-1" aria-labelledby="modal13Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal13Label">Изображение 13</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image13.jpg" alt="Image 13" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image14.jpg" alt="Image 14" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal14">
+                    <div class="modal fade" id="modal14" tabindex="-1" aria-labelledby="modal14Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal14Label">Изображение 14</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image14.jpg" alt="Image 14" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/image15.jpg" alt="Image 15" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal15">
+                    <div class="modal fade" id="modal15" tabindex="-1" aria-labelledby="modal15Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modal15Label">Изображение 15</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/image15.jpg" alt="Image 15" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
     </div>
 </section>
